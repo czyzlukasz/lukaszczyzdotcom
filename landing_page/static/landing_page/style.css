@@ -1,0 +1,9 @@
+.special {
+    color: darkorange;
+    border: 2cm;
+    border-color: aquamarine;
+    background-color: crimson;
+}
+.my-debug {
+    background-color: aquamarine;
+}
