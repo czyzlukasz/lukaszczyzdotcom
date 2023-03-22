@@ -1,31 +1,7 @@
-td {
-    position: relative;
-}
-
-table {
-    table-layout: fixed;
-}
-
-:root {
-    --project-thumbnail-size: 4cm;
-}
-
 .project-thumbnail {
     object-fit: scale-down;
-    max-height: var(--project-thumbnail-size);
-    max-width: var(--project-thumbnail-size);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.project-thumbnail-item {
-    width: var(--project-thumbnail-size);
-}
-
-.project-row {
-    height: var(--project-thumbnail-size);
+    max-height: 4cm;
+    max-width: 4cm;
 }
 
 .project-name {

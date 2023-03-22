@@ -3,25 +3,18 @@
 
 <h1>Projects worth mentioning</h1>
 <div class="container">
-    <div class="row">
-        <div class="col-12">
-            <div class="table-responsive">
-                <table class="table">
-                    <tbody>
-                        {% for project in projects%}
-                        <tr class="my-debug project-row">
-                            <td class="project-thumbnail-item">
-                                <img src={{project.image.url}} class="project-thumbnail"/>
-                            </td>
-                            <td>
-                                <div class="project-name">{{project.project_name}}</div>
-                                <div class="project-desc">{{project.project_description | truncatewords:30}}</div>
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+        {% for project in projects%}
+            <div class="card card-body mb-3">
+                <div class="row">
+                    <div class="col-auto">
+                    <img src={{project.image.url}} class="project-thumbnail"/>
+                    </div>
+                    <div class="col">
+                        <div class="project-name"> {{project.project_name}} </div>
+                        <div class="project-desc"> {{project.project_description | truncatewords:40}}</div>
+                    </div>
+                    <a href="#" class="stretched-link"></a>
+                </div>
             </div>
-        </div>
-    </div>
+        {% endfor %}
 </div>
