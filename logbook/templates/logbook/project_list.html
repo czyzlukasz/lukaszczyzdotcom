@@ -13,7 +13,7 @@
                         <div class="project-name"> {{project.project_name}} </div>
                         <div class="project-desc"> {{project.project_description | truncatewords:40}}</div>
                     </div>
-                    <a href="#" class="stretched-link"></a>
+                    <a href="{% url 'logbook:project' project.pk%}" class="stretched-link"></a>
                 </div>
             </div>
         {% endfor %}
