@@ -7,5 +7,8 @@
 
 <div class="project-name"> {{project.project_name}} </div>
 <div>{{project.project_description}}</div>
-
+<div> Project logs</div>
+{% block log_entry_list %}
+{% include 'logbook/log_entry_list.html' %}
+{% endblock %}
 {% endblock %}
