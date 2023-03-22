@@ -17,7 +17,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                    <h1 class="my-debug">A</h1>
+                    {% block content %}
+                    {% include 'logbook/project_list.html' %}
+                    {% endblock %}
                 </div>
                 <div class="col-lg-4">
                     {% block about %}
