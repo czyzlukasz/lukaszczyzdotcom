@@ -1,0 +1,27 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'logbook/style.css' %}"/>
+
+<h1>Projects worth mentioning</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table" style="table-layout:fixed;">
+                    <tbody>
+                        {% for project in projects%}
+                        <tr class="my-debug project-row">
+                            <td>
+                                <img src={{project.image.url}} class="project-thumbnail"/>
+                            </td>
+                            <td>
+                                <div class="project-name">{{project.project_name}}</div>
+                                <div class="project-desc">{{project.project_description | truncatewords:50}}</div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
