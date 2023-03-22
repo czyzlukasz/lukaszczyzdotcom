@@ -6,11 +6,11 @@
     <div class="row">
         <div class="col-12">
             <div class="table-responsive">
-                <table class="table" style="table-layout:fixed;">
+                <table class="table">
                     <tbody>
                         {% for project in projects%}
                         <tr class="my-debug project-row">
-                            <td>
+                            <td class="project-thumbnail-item">
                                 <img src={{project.image.url}} class="project-thumbnail"/>
                             </td>
                             <td>
