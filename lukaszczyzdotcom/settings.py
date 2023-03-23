@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ["127.0.0.1", "192.168.1.170"]
 INSTALLED_APPS = [
     'landing_page.apps.LandingPageConfig',
     'logbook.apps.LogbookConfig',
+    'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

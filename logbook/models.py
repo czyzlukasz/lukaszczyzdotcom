@@ -1,11 +1,13 @@
 from django.conf import settings
 from django.db import models
+from autoslug import AutoSlugField
 
 class Project(models.Model):
     project_name = models.CharField(max_length=500)
     project_description = models.CharField(max_length=2000)
     fanciness = models.IntegerField(default=0)
     image = models.ImageField(upload_to=settings.MEDIA_ROOT, null=True)
+    slug = AutoSlugField(populate_from='project_name', null=True)
 
     def __str__(self) -> str:
         return f"{self.project_name}"

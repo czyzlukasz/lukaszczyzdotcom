@@ -10,7 +10,6 @@ def index(request):
 
 class ProjectView(DetailView):
     model = Project
-
     context_object_name = 'project'
 
     def get_context_data(self, **kwargs):

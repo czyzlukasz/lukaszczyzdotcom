@@ -5,5 +5,5 @@ app_name = 'logbook'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('<int:pk>/<str>', views.ProjectView.as_view(), name='project')
+    path('<slug:slug>/', views.ProjectView.as_view(), name='project')
 ]
