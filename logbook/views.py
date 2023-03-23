@@ -5,8 +5,10 @@ from django.views.generic.detail import DetailView
 from .models import Project, LogEntry
 
 
-def index(request):
-    return HttpResponse('elo')
+def projects_view(request):
+    all_projects = Project.objects.all()
+    return render(request, 'logbook/projects.html', context={'projects': all_projects})
+
 
 class ProjectView(DetailView):
     model = Project
