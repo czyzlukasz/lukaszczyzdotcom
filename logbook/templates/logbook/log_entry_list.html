@@ -5,8 +5,8 @@
                 <div class="col">                    
                     <div>{{log_entry.entry_name}}</div>
                 </div>
-                <div class="col">
-                    <div>{{log_entry.date_modified | date:"d.m.Y"}}</div>
+                <div class="col-auto">
+                    <div>Last modified: {{log_entry.date_modified | date:"d.m.Y"}}</div>
                 </div>
                 <div>{{log_entry.entry_description}}</div>
                 <a href="#" class="stretched-link"></a>
