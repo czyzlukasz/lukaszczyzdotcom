@@ -7,6 +7,7 @@ class Project(models.Model):
     project_description = models.CharField(max_length=2000)
     fanciness = models.IntegerField(default=0)
     image = models.ImageField(upload_to=settings.MEDIA_ROOT, null=True)
+
     slug = AutoSlugField(populate_from='project_name', null=True)
 
     def __str__(self) -> str:
@@ -22,6 +23,8 @@ class LogEntry(models.Model):
     text = models.TextField()
     publish_date = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
+
+    slug = AutoSlugField(populate_from='entry_name', null=True)
 
     def __str__(self) -> str:
         return f"Log {self.entry_name} of project {self.project.project_name}"

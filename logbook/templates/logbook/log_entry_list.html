@@ -9,7 +9,7 @@
                     <div>Last modified: {{log_entry.date_modified | date:"d.m.Y"}}</div>
                 </div>
                 <div>{{log_entry.entry_description}}</div>
-                <a href="#" class="stretched-link"></a>
+                <a href="{% url 'logbook:log_entry' log_entry.entry_name|slugify %}" class="stretched-link"></a>
             </div>
         </div>
     {% endfor%}

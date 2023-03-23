@@ -17,3 +17,7 @@ class ProjectView(DetailView):
         log_entries = LogEntry.objects.filter(project = context['project'])
         context['log_entries'] = log_entries
         return context
+    
+class LogEntryView(DetailView):
+    model = LogEntry
+    context_object_name = 'log_entry'

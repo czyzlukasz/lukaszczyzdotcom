@@ -1,0 +1,10 @@
+{% extends "landing_page/index.html" %}
+
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'logbook/log_entry_detail_style.css' %}"/>
+
+<div>{{log_entry.entry_name}}</div>
+<div>{{log_entry.text}}</div>
+{% endblock %}
