@@ -3,8 +3,8 @@
 {% block content %}
 
 {% load static %}
-<link rel="stylesheet" href="{% static 'logbook/log_entry_detail_style.css' %}"/>
+<link rel="stylesheet" href="{% static 'logbook/style.css' %}"/>
 
-<div>{{log_entry.entry_name}}</div>
-<div>{{log_entry.text}}</div>
+<div class='content-title'>{{log_entry.entry_name}}</div>
+<div class='content-text'>{{log_entry.text}}</div>
 {% endblock %}
