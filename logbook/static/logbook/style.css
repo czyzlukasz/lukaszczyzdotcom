@@ -13,6 +13,7 @@
     font-weight: bold;
     padding-top: 0.5em;
     padding-bottom: 1em;
+    overflow-wrap: break-word;
 }
 
 .content-text {
