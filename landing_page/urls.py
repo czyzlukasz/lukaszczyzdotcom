@@ -4,5 +4,6 @@ from . import views
 app_name = 'landing_page'
 
 urlpatterns = [
-    path('', views.index, name='index')
+    path('', views.index, name='index'),
+    path('contact/', views.ContactMessageCreateView.as_view(), name='contact')
 ]

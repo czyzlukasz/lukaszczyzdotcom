@@ -1,0 +1,30 @@
+{% extends "landing_page/blank_landing_page.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-info" role="alert">
+        {{ message }}
+    </div>
+ {% endfor %}
+{% endif %}
+
+<form method="post">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-6">
+            {{ form.name|as_crispy_field }}
+        </div>
+        <div class="col-6">
+            {{ form.email|as_crispy_field }}
+        </div>
+    </div>
+    <div>
+        {{form.text|as_crispy_field}}
+    </div>
+    <button type="submit" class="btn btn-success">Send</button>
+</form>
+{% endblock %}
