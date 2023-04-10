@@ -16,6 +16,18 @@
     overflow-wrap: break-word;
 }
 
+.content-subtitle {
+    font-size: x-large;
+    font-weight: bold;
+    padding-top: 0.5em;
+    overflow-wrap: break-word;
+}
+
 .content-text {
-    padding-bottom: 1em;
+    padding-top: 1em;
+    padding-bottom: 2em;
+}
+
+.date {
+    color: rgb(173, 173, 173);
 }
