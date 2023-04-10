@@ -3,3 +3,10 @@ body {
     color: rgb(243, 243, 243);
     position: relative;
 }
+
+.about {
+    background-color: rgb(59, 59, 59);
+    border-radius: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
