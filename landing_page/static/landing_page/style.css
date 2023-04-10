@@ -4,6 +4,17 @@ body {
     position: relative;
 }
 
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(32, 32, 32);
+    font-size: small;
+    text-align: center;
+    padding-top: 1.25em;
+    padding-bottom: 1em;
+}
+
 .about {
     background-color: rgb(59, 59, 59);
     border-radius: 0.5em;
