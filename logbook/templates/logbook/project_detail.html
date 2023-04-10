@@ -7,20 +7,21 @@
 
 <div class='content-title'> {{project.project_name}} </div>
 <div class='content-text'>{{project.project_description}}</div>
-
-{% for log_entry in log_entries %}
-<div class="content-subtitle">{{log_entry.entry_name}}</div>
-<div class="row">
-    <div class="col gx-lg-5">
-        <div class="float-right date">Posted: {{log_entry.publish_date | date:"d.m.Y"}}</div>
+<div data-bs-spy="scroll" data-bs-offset="0" tabindex="0">
+    {% for log_entry in log_entries %}
+    <div class="content-subtitle" id={{log_entry.entry_name | slugify}}>{{log_entry.entry_name}}</div>
+    <div class="row">
+        <div class="col gx-lg-5">
+            <div class="float-right date">Posted: {{log_entry.publish_date | date:"d.m.Y"}}</div>
+        </div>
+        <div class="col">
+            <div class="float-right date">Last modified: {{log_entry.date_modified | date:"d.m.Y"}}</div>
+        </div>
     </div>
-    <div class="col">
-        <div class="float-right date">Last modified: {{log_entry.date_modified | date:"d.m.Y"}}</div>
+    <div class="content-text">
+        {{log_entry.text}}
     </div>
+    {% endfor %}
 </div>
-<div class="content-text">
-{{log_entry.text}}
-</div>
-{% endfor %}
 
 {% endblock %}
