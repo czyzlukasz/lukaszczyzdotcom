@@ -2,6 +2,7 @@ body {
     background-color: rgb(49, 49, 49);
     color: rgb(243, 243, 243);
     position: relative;
+    padding-bottom: 5em;
 }
 
 footer {
