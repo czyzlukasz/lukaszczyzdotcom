@@ -9,7 +9,7 @@
                     {% if project.image %} <img src={{project.image.url}} class="project-thumbnail"/> {% endif %}
                     </div>
                     <div class="col">
-                        <div class="project-name"> {{project.project_name}} </div>
+                        <div class="project-name list-item-title"> {{project.project_name}} </div>
                         <div class="project-desc"> {{project.project_description|truncatewords:40}}</div>
                     </div>
                     <a href="{% url 'logbook:project' project.project_name|slugify %}" class="stretched-link"></a>

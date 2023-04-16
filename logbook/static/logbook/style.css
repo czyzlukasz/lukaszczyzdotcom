@@ -8,6 +8,12 @@
     max-width: 4cm;
 }
 
+.list-item-title {
+    font-size: large;
+    font-weight: bold;
+    padding-bottom: 0.25em;
+}
+
 .content-title {
     font-size: xx-large;
     font-weight: bold;
