@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
@@ -17,6 +16,12 @@ def privacy_policy(request):
 
 class ContactMessageCreateView(SuccessMessageMixin, CreateView):
     model = ContactMessage
-    fields = ('name', 'email', 'text')
+    fields = ('name', 'email', 'text', 'accepted_terms')
     success_url = reverse_lazy('landing_page:contact')
     success_message = "Thanks! I'll contact You as soon as possible."
+
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class)
+        form.fields['accepted_terms'].required = True
+        form.fields['accepted_terms'].label = "I agree to the privacy policy."
+        return form
