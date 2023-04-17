@@ -6,7 +6,7 @@
                     <div class="list-item-title">{{log_entry.entry_name}}</div>
                 </div>
                 <div class="col-auto">
-                    <div>Last modified: {{log_entry.date_modified | date:"d.m.Y"}}</div>
+                    <div class="date">Last modified: {{log_entry.date_modified | date:"d.m.Y"}}</div>
                 </div>
                 <div>{{log_entry.entry_description}}</div>
                 <a href="{% url 'logbook:project' log_entry.project|slugify %}#{{log_entry.entry_name | slugify}}" class="stretched-link"></a>
