@@ -12,6 +12,9 @@ def index(request):
     last_log_entries = LogEntry.objects.all()[0:3]
     return render(request, 'landing_page/index.html', context={'projects': best_projects, 'log_entries': last_log_entries})
 
+def privacy_policy(request):
+    return render(request, 'landing_page/privacy_policy.html')
+
 class ContactMessageCreateView(SuccessMessageMixin, CreateView):
     model = ContactMessage
     fields = ('name', 'email', 'text')

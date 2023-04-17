@@ -16,6 +16,15 @@ footer {
     padding-bottom: 1em;
 }
 
+h2 {
+    padding-bottom: 0.5em;
+}
+
+h3 {
+    padding-top: 0.75em;
+    padding-bottom: 0.1em;
+}
+
 .about {
     background-color: rgb(59, 59, 59);
     border-radius: 0.5em;
