@@ -1,10 +1,11 @@
 from django.conf import settings
 from django.db import models
 from autoslug import AutoSlugField
+from martor.models import MartorField
 
 class Project(models.Model):
     project_name = models.CharField(max_length=500)
-    project_description = models.CharField(max_length=2000)
+    project_description = MartorField()
     fanciness = models.IntegerField(default=0)
     image = models.ImageField(null=True, blank=True)
 
@@ -20,7 +21,7 @@ class LogEntry(models.Model):
     project = models.ForeignKey(Project, on_delete=models.PROTECT)
     entry_name = models.CharField(max_length=500)
     entry_description = models.CharField(max_length=500, null=True)
-    text = models.TextField()
+    text = MartorField()
     publish_date = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
 
