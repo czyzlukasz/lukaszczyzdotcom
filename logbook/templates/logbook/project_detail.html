@@ -3,10 +3,17 @@
 {% block content %}
 
 {% load static %}
+
+{% load martortags %}
+{% block css %}
+  <link href="{% static 'plugins/css/ace.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+  <link href="{% static 'martor/css/martor.bootstrap.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+{% endblock %}
+
 <link rel="stylesheet" href="{% static 'logbook/style.css' %}"/>
 
 <div class='content-title'> {{project.project_name}} </div>
-<div class='content-text'>{{project.project_description}}</div>
+<div class='content-text'>{{project.project_description|safe_markdown}}</div>
 <div data-bs-spy="scroll" data-bs-offset="0" tabindex="0">
     {% for log_entry in log_entries %}
     <div class="content-subtitle" id={{log_entry.entry_name | slugify}}>{{log_entry.entry_name}}</div>
@@ -16,7 +23,7 @@
         Last modified: {{log_entry.date_modified | date:"d.m.Y"}}
     </div>
     <div class="content-text">
-        {{log_entry.text}}
+        {{log_entry.text|safe_markdown}}
     </div>
     {% endfor %}
 </div>

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'logbook.apps.LogbookConfig',
     'crispy_forms',
     'crispy_bootstrap5',
+    'martor',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -143,3 +144,17 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_COOKIE_HTTPONLY = False
+
+MARTOR_THEME = 'bootstrap'
+
+MARTOR_ENABLE_CONFIGS = {
+    'emoji': 'false',        # to enable/disable emoji icons.
+    'imgur': 'false',        # to enable/disable imgur/custom uploader.
+    'mention': 'false',     # to enable/disable mention
+    'jquery': 'true',       # to include/revoke jquery (require for admin default django)
+    'living': 'true',      # to enable/disable live updates in preview
+    'spellcheck': 'true',  # to enable/disable spellcheck in form textareas
+    'hljs': 'true',         # to enable/disable hljs highlighting in preview
+}

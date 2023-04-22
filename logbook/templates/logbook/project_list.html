@@ -1,4 +1,11 @@
 {% load static %}
+
+{% load martortags %}
+{% block css %}
+  <link href="{% static 'plugins/css/ace.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+  <link href="{% static 'martor/css/martor.bootstrap.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+{% endblock %}
+
 <link rel="stylesheet" href="{% static 'logbook/style.css' %}"/>
 
 <div class="container">
@@ -10,7 +17,7 @@
                     </div>
                     <div class="col">
                         <div class="project-name list-item-title"> {{project.project_name}} </div>
-                        <div class="project-desc"> {{project.project_description|truncatewords:40}}</div>
+                        <div class="project-desc"> {{project.project_description|safe_markdown|truncatewords:40}}</div>
                     </div>
                     <a href="{% url 'logbook:project' project.project_name|slugify %}" class="stretched-link"></a>
                 </div>
