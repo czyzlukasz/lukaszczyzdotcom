@@ -29,6 +29,6 @@
         Privacy policy can be found <a href="{% url 'landing_page:privacy_policy' %}">here</a>.
         {{form.accepted_terms|as_crispy_field}}
     </div>
-    <button type="submit" class="btn btn-success">Send</button>
+    <button type="submit" class="btn btn-success disabled">Send</button>
 </form>
 {% endblock %}
