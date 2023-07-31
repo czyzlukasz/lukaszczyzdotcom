@@ -8,6 +8,7 @@ COPY landing_page ./landing_page
 COPY logbook ./logbook
 COPY lukaszczyzdotcom ./lukaszczyzdotcom
 COPY scripts ./scripts
+RUN chmod +x ./scripts/*
 COPY requirements.txt .
 COPY manage.py .
 COPY gunicorn_config.py .
