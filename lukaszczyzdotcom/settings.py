@@ -146,6 +146,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_COOKIE_HTTPONLY = False
+CSRF_TRUSTED_ORIGINS = ["https://lukaszczyz.com"]
 
 MARTOR_THEME = 'bootstrap'
 
