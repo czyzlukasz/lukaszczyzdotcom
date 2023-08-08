@@ -34,8 +34,8 @@ ALLOWED_HOSTS = ["lukaszczyz.com"]
 # Application definition
 
 INSTALLED_APPS = [
-    'landing_page.apps.LandingPageConfig',
-    'logbook.apps.LogbookConfig',
+    'landing_page',
+    'logbook',
     'crispy_forms',
     'crispy_bootstrap5',
     'martor',
