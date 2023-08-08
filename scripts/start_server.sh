@@ -1,5 +1,5 @@
 echo "Migrating database"
-python3 manage.py makemigrations &&
+python3 manage.py makemigrations logbook landing_page &&
 python3 manage.py migrate
 python3 manage.py collectstatic --noinput
 
