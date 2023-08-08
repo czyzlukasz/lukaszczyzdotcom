@@ -9,7 +9,7 @@ class Project(models.Model):
     fanciness = models.IntegerField(default=0)
     image = models.ImageField(null=True, blank=True)
 
-    slug = AutoSlugField(populate_from='project_name', null=True)
+    slug = AutoSlugField(populate_from='project_name', unique=True)
 
     def __str__(self) -> str:
         return f"{self.project_name}"
@@ -25,7 +25,7 @@ class LogEntry(models.Model):
     publish_date = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
 
-    slug = AutoSlugField(populate_from='entry_name', null=True)
+    slug = AutoSlugField(populate_from='entry_name', unique=True)
 
     def __str__(self) -> str:
         return f"Log {self.entry_name} of project {self.project.project_name}"
