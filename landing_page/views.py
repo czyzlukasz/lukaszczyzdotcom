@@ -7,8 +7,8 @@ from landing_page.models import ContactMessage
 from logbook.models import Project, LogEntry
 
 def index(request):
-    best_projects = Project.objects.all()[0:3]
-    last_log_entries = LogEntry.objects.all()[0:3]
+    best_projects = Project.objects.filter(public = 1)[0:3]
+    last_log_entries = LogEntry.objects.filter(public = True).filter(project__public = True)[0:3]
     return render(request, 'landing_page/index.html', context={'projects': best_projects, 'log_entries': last_log_entries})
 
 def privacy_policy(request):

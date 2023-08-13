@@ -7,6 +7,7 @@ class Project(models.Model):
     project_name = models.CharField(max_length=500)
     project_description = MartorField()
     fanciness = models.IntegerField(default=0)
+    public = models.BooleanField(default=False)
     image = models.ImageField(null=True, blank=True)
 
     slug = AutoSlugField(populate_from='project_name', unique=True)
@@ -24,6 +25,7 @@ class LogEntry(models.Model):
     text = MartorField()
     publish_date = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
+    public = models.BooleanField(default=False)
 
     slug = AutoSlugField(populate_from='entry_name', unique=True)
 
