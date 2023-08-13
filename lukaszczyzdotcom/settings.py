@@ -28,7 +28,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["lukaszczyz.com"]
+if DEBUG:
+    ALLOWED_HOSTS = ["localhost"]
+else:
+    ALLOWED_HOSTS = ["lukaszczyz.com"]
+
 CSRF_TRUSTED_ORIGINS = ["https://lukaszczyz.com"]
 
 # Application definition
