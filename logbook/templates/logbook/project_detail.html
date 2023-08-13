@@ -29,3 +29,22 @@
 </div>
 
 {% endblock %}
+
+{% block aux_content %}
+    {% if log_entries %}
+        <div class="pt-3">
+            <nav class="nav navbar-dark flex-column">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="navbar-brand">{{project.project_name}}</a>
+                    </li>
+                    {% for log_entry in log_entries %}
+                        <li class="nav-item">
+                            <a href="#{{log_entry.entry_name | slugify}}" class="nav-link">{{log_entry.entry_name}}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+    {% endif %}
+{% endblock %}
