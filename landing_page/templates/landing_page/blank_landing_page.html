@@ -21,9 +21,15 @@
                     {% endblock %}
                 </div>
                 <div class="col-xxl-3 col-lg-4 col-md-12 mt-3">
-                    {% block about %}
-                    {% include 'landing_page/about.html' %}
-                    {% endblock %}
+                    <div>
+                        {% block about %}
+                        {% include 'landing_page/about.html' %}
+                        {% endblock %}
+                    </div>
+                    <div class="d-none d-lg-block mt-5">
+                        {% block aux_content %}
+                        {% endblock %}
+                    </div>
                 </div>
             </div>
         </div>
