@@ -62,6 +62,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_ratelimit.middleware.RatelimitMiddleware',
 ]
 
 ROOT_URLCONF = 'lukaszczyzdotcom.urls'
@@ -163,3 +164,5 @@ MARTOR_ENABLE_CONFIGS = {
     'spellcheck': 'true',  # to enable/disable spellcheck in form textareas
     'hljs': 'true',         # to enable/disable hljs highlighting in preview
 }
+
+RATELIMIT_VIEW = 'landing_page.views.ratelimited_view'

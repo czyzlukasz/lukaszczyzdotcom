@@ -14,6 +14,15 @@
             {% include 'landing_page/navbar.html' %}
             {% endblock %}
         </div>
+        {% if messages %}
+            <div class="container pt-2">
+                {% for message in messages %}
+                    <div class="alert alert-info alert-trim" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
         <div class="container">
             <div class="row">
                 <div class="col-xxl-9 col-lg-8 col-md-12">

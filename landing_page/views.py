@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
 from django.contrib.messages.views import SuccessMessageMixin
+from django.utils.decorators import method_decorator
+from django_ratelimit.decorators import ratelimit
 
 from landing_page.models import ContactMessage
 from logbook.models import Project, LogEntry
@@ -14,6 +16,7 @@ def index(request):
 def privacy_policy(request):
     return render(request, 'landing_page/privacy_policy.html')
 
+@method_decorator(ratelimit(key='ip', rate='1/h', method='POST'), name='post')
 class ContactMessageCreateView(SuccessMessageMixin, CreateView):
     model = ContactMessage
     fields = ('name', 'email', 'text', 'accepted_terms')
@@ -25,3 +28,6 @@ class ContactMessageCreateView(SuccessMessageMixin, CreateView):
         form.fields['accepted_terms'].required = True
         form.fields['accepted_terms'].label = "I agree to the privacy policy."
         return form
+
+def ratelimited_view(request, exception):
+    return render(request, 'landing_page/blank_landing_page.html', context={'messages': [f"Too fast! Try again later."]})

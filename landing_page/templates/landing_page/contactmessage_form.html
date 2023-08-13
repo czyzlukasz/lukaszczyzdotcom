@@ -4,14 +4,6 @@
 
 {% block content %}
 
-{% if messages %}
-  {% for message in messages %}
-    <div class="alert alert-info" role="alert">
-        {{ message }}
-    </div>
- {% endfor %}
-{% endif %}
-
 <form method="post">
     {% csrf_token %}
     <div class="row">
@@ -29,6 +21,6 @@
         Privacy policy can be found <a href="{% url 'landing_page:privacy_policy' %}">here</a>.
         {{form.accepted_terms|as_crispy_field}}
     </div>
-    <button type="submit" class="btn btn-success disabled">Send</button>
+    <button type="submit" class="btn btn-success">Send</button>
 </form>
 {% endblock %}
