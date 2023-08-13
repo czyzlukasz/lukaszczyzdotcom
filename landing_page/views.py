@@ -16,7 +16,7 @@ def index(request):
 def privacy_policy(request):
     return render(request, 'landing_page/privacy_policy.html')
 
-@method_decorator(ratelimit(key='ip', rate='1/h', method='POST'), name='post')
+@method_decorator(ratelimit(key='header:x-real-ip', rate='1/h', method='POST'), name='post')
 class ContactMessageCreateView(SuccessMessageMixin, CreateView):
     model = ContactMessage
     fields = ('name', 'email', 'text', 'accepted_terms')
