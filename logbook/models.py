@@ -3,6 +3,7 @@ from django.db import models
 from autoslug import AutoSlugField
 from martor.models import MartorField
 
+
 class Project(models.Model):
     project_name = models.CharField(max_length=500)
     project_description = MartorField()
@@ -14,6 +15,7 @@ class Project(models.Model):
 
     def __str__(self) -> str:
         return f"{self.project_name}"
+
 
 class LogEntry(models.Model):
     class Meta:
@@ -31,3 +33,9 @@ class LogEntry(models.Model):
 
     def __str__(self) -> str:
         return f"Log {self.entry_name} of project {self.project.project_name}"
+
+
+class LogPhoto(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.ImageField()
+    description = models.TextField()
